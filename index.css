@@ -1,3 +1,8 @@
+/* tartalom::
+GMN
+FMN
+EINSTEIN */
+
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer:ital@0;1&display=swap");
 * {
@@ -38,6 +43,8 @@ h2 {
   border: 1px solid mintcream;
 }
 
+/* GMN */
+
 .projectWindow#guessMyNum {
   height: 80vh;
   width: 90%;
@@ -76,7 +83,6 @@ main {
   font-size: 1rem;
 }
 
-/* ELEMENTS STYLE */
 h1 {
   font-size: 3rem;
   text-align: center;
@@ -149,6 +155,8 @@ h1 {
   margin-bottom: 2rem;
 }
 
+/* FMN */
+
 #guessMyNum2 {
   background-color: rgb(136, 209, 255);
 }
@@ -190,8 +198,6 @@ h1 {
   width: 52rem;
   font-size: 1rem;
 }
-
-/* ELEMENTS STYLE */
 
 .number2 {
   position: absolute;
@@ -287,4 +293,69 @@ h1 {
 
 .label-score {
   margin-bottom: 2rem;
+}
+
+/* EINSTEIN */
+
+.show-modal {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  margin: 2rem 2rem;
+  border: none;
+  background-color: #fff;
+  color: #444;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+p {
+  font-size: 1.8rem;
+}
+
+/* -------------------------- */
+/* CLASSES TO MAKE MODAL WORK */
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
 }
