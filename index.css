@@ -148,3 +148,143 @@ h1 {
 .label-score {
   margin-bottom: 2rem;
 }
+
+#guessMyNum2 {
+  background-color: rgb(136, 209, 255);
+}
+
+.header2 {
+  position: relative;
+  height: 30vh;
+  border: none;
+  color: rgb(16, 131, 203);
+  text-shadow: 1px 2px 1px #000000, -1px -2px 1px #fff;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 900;
+  font-size: 6vh;
+  text-transform: uppercase;
+}
+
+.main2 {
+  height: 50vh;
+  color: rgb(136, 209, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-shadow: 1px 2px 1px #000000, -1px -2px 1px #fff;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 900;
+  font-size: 6vh;
+  text-transform: uppercase;
+  padding: 6vh;
+}
+
+.left {
+  width: 52rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.right {
+  width: 52rem;
+  font-size: 1rem;
+}
+
+/* ELEMENTS STYLE */
+
+.number2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 10%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10rem;
+  width: 300px;
+  height: 300px;
+  padding: 2rem 0rem;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #7abce6, #92e0ff);
+  box-shadow: 13px 13px 33px #5888a6, -13px -13px 33px #b8ffff;
+  text-align: center;
+  color: #000000;
+  text-shadow: -1px -1px 3px #ffffff, 2px 2px 4px #5888a6;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.between2 {
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+  font-size: 5vh;
+}
+
+.guess2 {
+  all: unset;
+  position: absolute;
+  transform: translate(50%, -70%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #7abce6, #92e0ff);
+  box-shadow: 13px 13px 33px #5888a6, -13px -13px 33px #b8ffff;
+  text-align: center;
+  color: #000000;
+  text-shadow: -1px -1px 3px #ffffff, 2px 2px 4px #5888a6;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.btn2 {
+  all: unset;
+  position: absolute;
+  transform: translate(270%, -10%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #7abce6, #92e0ff);
+  box-shadow: 13px 13px 33px #5888a6, -13px -13px 33px #b8ffff;
+  text-align: center;
+  color: #000000;
+  text-shadow: -1px -1px 3px #ffffff, 2px 2px 4px #5888a6;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  cursor: pointer;
+}
+
+.btn2:hover {
+  background: #437593;
+}
+
+.again2 {
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  padding: 20px;
+  transform: translate(40%, 40%);
+}
+
+.change {
+  width: fit-content;
+  height: 30px;
+  border-radius: 10px;
+  padding: 20px;
+  transform: translate(18%, 180%);
+}
+
+.message {
+  margin-bottom: 4rem;
+  height: 2rem;
+}
+
+.label-score {
+  margin-bottom: 2rem;
+}
