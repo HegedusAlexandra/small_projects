@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer:ital@0;1&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+  background-color: rgb(22, 75, 45);
+}
+
+h2 {
+  position: absolute;
+  color: rgb(255, 138, 202);
+  font-family: "IM Fell Great Primer", serif;
+  font-style: italic;
+  letter-spacing: 2px;
+  font-size: 14vh;
+  transform: translate(-6%, -66%);
+  padding: 2vh;
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.3),
+    0px 18px 23px rgba(0, 0, 0, 0.3);
+}
+
+.projectWindow {
+  height: 80vh;
+  width: 90%;
+  box-sizing: border-box;
+  margin: 10vh;
+  border-radius: 6px;
+  border: 1px solid mintcream;
+}
+
+.projectWindow#guessMyNum {
+  height: 80vh;
+  width: 90%;
+  box-sizing: border-box;
+  margin: 10vh;
+  border-radius: 6px;
+  border: 1px solid mintcream;
+  font-family: "Press Start 2P", sans-serif;
+  color: #eee;
+  background-color: #222;
+}
+
+header {
+  position: relative;
+  height: 35vh;
+  border-bottom: 7px solid #eee;
+}
+
+main {
+  height: 50vh;
+  color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.left {
+  width: 52rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.right {
+  width: 52rem;
+  font-size: 1rem;
+}
+
+/* ELEMENTS STYLE */
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.number {
+  background: #eee;
+  color: #333;
+  font-size: 4rem;
+  width: 15rem;
+  padding: 2rem 0rem;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.between {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.again {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+.guess {
+  background: none;
+  border: 4px solid #eee;
+  font-family: inherit;
+  color: inherit;
+  font-size: 4rem;
+  padding: 2rem;
+  width: 20rem;
+  text-align: center;
+  display: block;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  border: none;
+  background-color: #eee;
+  color: #222;
+  font-size: 2rem;
+  font-family: inherit;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ccc;
+}
+
+.message {
+  margin-bottom: 4rem;
+  height: 2rem;
+}
+
+.label-score {
+  margin-bottom: 2rem;
+}
