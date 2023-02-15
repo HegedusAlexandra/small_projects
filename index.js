@@ -167,19 +167,25 @@ const statement = [
 
 function addModal(arr) {
   let tag = document.createElement("button");
+  let text = document.createTextNode("Who owns the fish?");
   let input = document.createElement("input");
-  let send = document.createElement("button");
-  let text = document.createTextNode(`Who owns the fish?`);
   let textSend = document.createTextNode("Check!");
+  let send = document.createElement("button");
+
+  tag.classList.add("show-modal");
+  input.classList.add("solvedRiddle");
   send.classList.add("checkIt");
+
   tag.appendChild(text);
   send.appendChild(textSend);
+
   let element = document.getElementById("einstein");
-  tag.classList.add("show-modal");
+
   element.appendChild(tag);
   element.appendChild(input);
   element.appendChild(send);
-  for (let i = 1; i < arr.length; i++) {
+
+  for (let i = 0; i < arr.length; i++) {
     let p = document.createElement("p");
     let textP = document.createTextNode(`${arr[i]}`);
     p.appendChild(textP);
@@ -230,6 +236,25 @@ function addInteractModal(arr) {
 }
 
 addInteractModal(dragIt);
+
+document.querySelector(".checkIt").addEventListener("click", function () {
+  let guess2 = document.querySelector(".solvedRiddle").value;
+
+  let specials = /[^A-Za-z]/g;
+  guess2 = guess2.replace(specials, "");
+
+  // When there is no input
+  if (guess2.toLowerCase() === "german") {
+    document.querySelector(".beer").classList.add("winner");
+    document.querySelector(".interactContainer").style.display = "none";
+    document.querySelector(".solvedRiddle").style.backgroundColor = "white";
+  } else {
+    document.querySelector(".solvedRiddle").style.backgroundColor = "red";
+    setTimeout(() => {
+      document.querySelector(".solvedRiddle").style.backgroundColor = "white";
+    }, "3000");
+  }
+});
 
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
