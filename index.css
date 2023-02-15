@@ -1,7 +1,8 @@
 /* tartalom::
 GMN
 FMN
-EINSTEIN */
+EINSTEIN 
+Pig Game*/
 
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer:ital@0;1&display=swap");
@@ -487,4 +488,167 @@ p {
   width: 70%;
   height: 80vh;
   padding: 4vh;
+}
+/* Pig Game */
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+#pigGame {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  height: 80vh;
+  color: #333;
+  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#pigGameHead {
+  position: absolute;
+  transform: translate(-104%, -320%);
+}
+
+/* LAYOUT */
+#p {
+  position: relative;
+  width: 70%;
+  height: 60vh;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+}
+
+.pplayer {
+  flex: 50%;
+  padding: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+/* ELEMENTS */
+.pname {
+  position: relative;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.pscore {
+  font-size: 4rem;
+  font-weight: 300;
+  color: #c7365f;
+  margin-bottom: auto;
+}
+
+.pplayer--active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.pplayer--active .name {
+  font-weight: 700;
+}
+.pplayer--active .score {
+  font-weight: 400;
+}
+
+.pplayer--active .current {
+  opacity: 1;
+}
+
+.pcurrent {
+  background-color: #c7365f;
+  opacity: 0.8;
+  border-radius: 9px;
+  color: #fff;
+  width: 90%;
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.75s;
+}
+
+.pcurrent-label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #ddd;
+}
+
+.pcurrent-score {
+  font-size: 2rem;
+}
+
+/* ABSOLUTE POSITIONED ELEMENTS */
+.pbtn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+  height: 6vh;
+
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+
+  padding: 0.3rem 1.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.pbtn::first-letter {
+  font-size: 1.4rem;
+  display: inline-block;
+  margin-right: 0.7rem;
+}
+
+.pbtn--new {
+  top: 4rem;
+}
+.pbtn--roll {
+  top: 20.3rem;
+}
+.pbtn--hold {
+  top: 24.1rem;
+}
+
+.pbtn:active {
+  transform: translate(-50%, 3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.pbtn:focus {
+  outline: none;
+}
+
+.pdice {
+  position: absolute;
+  left: 50%;
+  top: 10rem;
+  transform: translateX(-50%);
+  height: 6rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+.pplayer--winner {
+  background-color: #2f2f2f;
+}
+
+.pplayer--winner .name {
+  font-weight: 700;
+  color: #c7365f;
 }

@@ -61,8 +61,31 @@
       <div class="overlay hidden"></div>
       <div class="interactContainer"><div class="helpingTable"></div></div>
     </div>
-    <div class="projectWindow">
-      <h2 id="nemtommég"></h2>
+    <div class="projectWindow" id="pigGame">
+      <h2 id="pigGameHead">pig game</h2>
+      <main id="p">
+        <section class="pplayer pplayer--0 pplayer--active">
+          <h3 class="pname" id="pname--0">Player 1</h3>
+          <p class="pscore" id="pscore--0">43</p>
+          <div class="pcurrent">
+            <p class="pcurrent-label">Current</p>
+            <p class="pcurrent-score" id="current--0">0</p>
+          </div>
+        </section>
+        <section class="pplayer pplayer--1">
+          <h3 class="pname" id="pname--1">Player 2</h3>
+          <p class="pscore" id="pscore--1">24</p>
+          <div class="pcurrent">
+            <p class="pcurrent-label">Current</p>
+            <p class="pcurrent-score" id="current--1">0</p>
+          </div>
+        </section>
+
+        <img src="dice-5.png" alt="Playing dice" class="pdice" />
+        <button class="pbtn pbtn--new">🔄 New game</button>
+        <button class="pbtn pbtn--roll">🎲 Roll dice</button>
+        <button class="pbtn pbtn--hold">📥 Hold</button>
+      </main>
     </div>
     <script src="index.js"></script>
   </body>

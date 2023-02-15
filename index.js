@@ -4,6 +4,7 @@
 //GMN1
 //GMN2
 //EINSTEIN
+//Pig Game
 
 //GMN1
 
@@ -337,3 +338,6 @@ function dragMoveListener(event) {
 
 // this is used later in the resizing and gesture demos
 window.dragMoveListener = dragMoveListener;
+
+//Pig Game
+document.querySelector("#pigGameHead").textContent = "pig game";
