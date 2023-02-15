@@ -147,7 +147,7 @@ document.querySelector(".again2").addEventListener("click", function () {
 
 document.querySelector("#einsteinRiddle").textContent = "Einstein's riddle";
 
-const truth = [
+const statement = [
   "The Brit lives in the red house",
   "The Swede keeps dogs as pets",
   "The Dane drinks tea",
@@ -164,25 +164,72 @@ const truth = [
   "The Norwegian lives next to the blue house",
   "The man who smokes blend has a neighbor who drinks water",
 ];
-console.log(truth);
+
 function addModal(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    let tag = document.createElement("button");
-    let text = document.createTextNode(`${i + 1}. statement`);
-    tag.appendChild(text);
-    let element = document.getElementById("einstein");
-    tag.classList.add("show-modal");
-    element.appendChild(tag);
+  let tag = document.createElement("button");
+  let input = document.createElement("input");
+  let send = document.createElement("button");
+  let text = document.createTextNode(`Who owns the fish?`);
+  let textSend = document.createTextNode("Check!");
+  send.classList.add("checkIt");
+  tag.appendChild(text);
+  send.appendChild(textSend);
+  let element = document.getElementById("einstein");
+  tag.classList.add("show-modal");
+  element.appendChild(tag);
+  element.appendChild(input);
+  element.appendChild(send);
+  for (let i = 1; i < arr.length; i++) {
     let p = document.createElement("p");
     let textP = document.createTextNode(`${arr[i]}`);
-    p.value = arr[i];
     p.appendChild(textP);
     let elementP = document.querySelector(".modal");
     elementP.appendChild(p);
   }
 }
 
-addModal(truth);
+addModal(statement);
+
+const dragIt = [
+  "German",
+  "Norwegian",
+  "Swede",
+  "Dane",
+  "British",
+  "dogs ",
+  "cats",
+  "birds",
+  "horses",
+  "fish",
+  "beer",
+  "tea",
+  "milk",
+  "coffee",
+  "water",
+  "red house",
+  "green house",
+  "yellow house",
+  "white house",
+  "blue house",
+  "Pall Mall",
+  "Dunhill",
+  "Blends",
+  "BlueMaster",
+  "Prince",
+];
+
+function addInteractModal(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let interactDiv = document.createElement("div");
+    let interactText = document.createTextNode(`${arr[i]}`);
+    interactDiv.appendChild(interactText);
+    interactDiv.classList.add("draggable");
+    let element = document.querySelector(".interactContainer");
+    element.appendChild(interactDiv);
+  }
+}
+
+addInteractModal(dragIt);
 
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
@@ -212,3 +259,56 @@ document.addEventListener("keydown", function (e) {
     closeModal();
   }
 });
+
+//EINSTEIN draggable
+
+// Code goes here
+
+// target elements with the "draggable" class
+interact(".draggable").draggable({
+  // enable inertial throwing
+  inertia: true,
+  // keep the element within the area of it's parent
+  restrict: {
+    restriction: "parent",
+    endOnly: true,
+    elementRect: { top: 0, left: 0, bottom: 1, right: 1 },
+  },
+  // enable autoScroll
+  autoScroll: true,
+
+  // call this function on every dragmove event
+  onmove: dragMoveListener,
+  // call this function on every dragend event
+  onend: function (event) {
+    var textEl = event.target.querySelector("p");
+
+    textEl &&
+      (textEl.textContent =
+        "moved a distance of " +
+        Math.sqrt(
+          (Math.pow(event.pageX - event.x0, 2) +
+            Math.pow(event.pageY - event.y0, 2)) |
+            0
+        ).toFixed(2) +
+        "px");
+  },
+});
+
+function dragMoveListener(event) {
+  var target = event.target,
+    // keep the dragged position in the data-x/data-y attributes
+    x = (parseFloat(target.getAttribute("data-x")) || 0) + event.dx,
+    y = (parseFloat(target.getAttribute("data-y")) || 0) + event.dy;
+
+  // translate the element
+  target.style.webkitTransform = target.style.transform =
+    "translate(" + x + "px, " + y + "px)";
+
+  // update the posiion attributes
+  target.setAttribute("data-x", x);
+  target.setAttribute("data-y", y);
+}
+
+// this is used later in the resizing and gesture demos
+window.dragMoveListener = dragMoveListener;

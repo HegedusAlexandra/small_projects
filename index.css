@@ -18,12 +18,12 @@ body {
   padding: 0px;
   border: 0px;
   margin: 0px;
-  background-color: rgb(22, 75, 45);
+  background-color: rgb(9, 49, 27);
 }
 
 h2 {
   position: absolute;
-  color: rgb(255, 138, 202);
+  color: rgb(220, 103, 126);
   font-family: "IM Fell Great Primer", serif;
   font-style: italic;
   letter-spacing: 2px;
@@ -297,16 +297,64 @@ h1 {
 
 /* EINSTEIN */
 
-.show-modal {
+#einstein {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+#einstein input {
+  position: absolute;
+  right: 0px;
+  width: 24%;
+  transform: translate(0, 140%);
   font-size: 2rem;
   font-weight: 600;
   padding: 1rem 1.5rem;
-  margin: 2rem 2rem;
+  margin: 1.5rem 6rem;
   border: none;
-  background-color: #fff;
-  color: #444;
+  background-color: mintcream;
+  color: #000000;
   border-radius: 10rem;
   cursor: pointer;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4), 1px 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 13px #000000, -3px -3px 13px #000000d7;
+}
+
+.checkIt {
+  position: absolute;
+  right: 0px;
+  width: 24%;
+  transform: translate(0, 300%);
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 6rem;
+  border: none;
+  background-color: mintcream;
+  color: #000000;
+  border-radius: 10rem;
+  cursor: pointer;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4), 1px 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 13px #000000, -3px -3px 13px #000000d7;
+}
+
+.show-modal {
+  position: absolute;
+  right: 0px;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 6rem;
+  border: none;
+  background-color: springgreen;
+  color: #000000;
+  border-radius: 10rem;
+  cursor: pointer;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4), 1px 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 13px #000000, -3px -3px 13px #000000d7;
 }
 
 .close-modal {
@@ -342,7 +390,7 @@ p {
   transform: translate(-50%, -50%);
   width: 70%;
 
-  background-color: white;
+  background-color: mintcream;
   padding: 6rem;
   border-radius: 5px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
@@ -358,4 +406,47 @@ p {
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
   z-index: 5;
+}
+
+.draggable {
+  width: 14%;
+  height: 10%;
+
+  margin: 1%;
+
+  border-radius: 4px;
+  padding: 0.5%;
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.63);
+  background-color: rgb(177, 255, 216);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.interactContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 70%;
+  height: 80vh;
+  gap: 10px;
+  padding-left: 16%;
+}
+
+.helpingTable {
+  position: absolute;
+  z-index: -1;
+
+  width: 70%;
+  height: 80vh;
+
+  transform: translate(-22%, -2%);
+  box-shadow: 0rem -1rem 1rem rgba(0, 0, 0, 0.413);
+  background-image: url("./paper.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  border-radius: 4px;
 }
