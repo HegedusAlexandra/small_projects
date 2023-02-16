@@ -168,10 +168,12 @@ const statement = [
 
 function addModal(arr) {
   let tag = document.createElement("button");
-  let text = document.createTextNode("Who owns the fish?");
+  let text = document.createTextNode("Look at the statements");
   let input = document.createElement("input");
   let textSend = document.createTextNode("Check!");
   let send = document.createElement("button");
+  let question = document.createElement("h4");
+  let textQuestion = document.createTextNode("Who owns the fish?");
 
   tag.classList.add("show-modal");
   input.classList.add("solvedRiddle");
@@ -179,9 +181,11 @@ function addModal(arr) {
 
   tag.appendChild(text);
   send.appendChild(textSend);
+  question.appendChild(textQuestion);
 
   let element = document.getElementById("einstein");
 
+  element.appendChild(question);
   element.appendChild(tag);
   element.appendChild(input);
   element.appendChild(send);

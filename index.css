@@ -328,7 +328,7 @@ h1 {
   position: absolute;
   right: 0px;
   width: 24%;
-  transform: translate(0, 140%);
+  transform: translate(0, 300%);
   font-size: 2rem;
   font-weight: 600;
   padding: 1rem 1.5rem;
@@ -346,7 +346,7 @@ h1 {
   position: absolute;
   right: 0px;
   width: 24%;
-  transform: translate(0, 300%);
+  transform: translate(0, 460%);
   font-size: 2rem;
   font-weight: 600;
   padding: 1rem 1.5rem;
@@ -367,6 +367,7 @@ h1 {
 .show-modal {
   position: absolute;
   right: 0px;
+  transform: translate(0%, 140%);
   font-size: 2rem;
   font-weight: 600;
   padding: 1rem 1.5rem;
@@ -457,6 +458,22 @@ p {
   padding-top: 3%;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 2.5vh;
+}
+
+h4 {
+  position: absolute;
+  right: 0px;
+  width: 24%;
+
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 6rem;
+  border: none;
+  color: springgreen;
+  border-radius: 10rem;
+  cursor: pointer;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4), 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .helpingTable {
