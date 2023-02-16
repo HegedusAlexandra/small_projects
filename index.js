@@ -340,4 +340,14 @@ function dragMoveListener(event) {
 window.dragMoveListener = dragMoveListener;
 
 //Pig Game
+
+//selecting elements
+
 document.querySelector("#pigGameHead").textContent = "pig game";
+const pscore0El = document.querySelector("#pscore--0");
+const pscore1El = document.getElementById("pscore--1");
+const pdiceEl = document.querySelector(".pdice");
+
+pscore0El.textContent = 0;
+pscore1El.textContent = 0;
+pdiceEl.classList.add("phidden");
