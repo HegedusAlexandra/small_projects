@@ -168,7 +168,7 @@ const statement = [
 
 function addModal(arr) {
   let tag = document.createElement("button");
-  let text = document.createTextNode("Look at the statements");
+  let text = document.createTextNode("Click for statements");
   let input = document.createElement("input");
   let textSend = document.createTextNode("Check!");
   let send = document.createElement("button");
@@ -348,10 +348,79 @@ window.dragMoveListener = dragMoveListener;
 //selecting elements
 
 document.querySelector("#pigGameHead").textContent = "pig game";
+const pplayer0El = document.querySelector(".pplayer--0");
+const pplayer1El = document.querySelector(".pplayer--1");
 const pscore0El = document.querySelector("#pscore--0");
 const pscore1El = document.getElementById("pscore--1");
 const pdiceEl = document.querySelector(".pdice");
+const pbtnNew = document.querySelector(".pbtn--new");
+const pbtnRoll = document.querySelector(".pbtn--roll");
+const pbtnHold = document.querySelector(".pbtn--hold");
+const pcurrent0El = document.getElementById("current--0");
+const pcurrent1El = document.getElementById("current--1");
 
-pscore0El.textContent = 0;
-pscore1El.textContent = 0;
-pdiceEl.classList.add("phidden");
+let pscores, pcurrentScore, pactivePlayer, pplaying;
+
+function init() {
+  pscores = [0, 0];
+  pcurrentScore = 0;
+  pactivePlayer = 0;
+  pplaying = true;
+  pscore0El.textContent = 0;
+  pscore1El.textContent = 0;
+  pcurrent0El.textContent = 0;
+  pcurrent1El.textContent = 0;
+  pdiceEl.classList.add("phidden");
+  pplayer0El.classList.remove("pplayer--winner");
+  pplayer1El.classList.remove("pplayer--winner");
+  pplayer0El.classList.add("pplayer--active");
+  pplayer1El.classList.remove("pplayer--active");
+}
+init();
+
+const switchPlayer = function () {
+  document.getElementById(`current--${pactivePlayer}`).textContent = 0;
+  pcurrentScore = 0;
+  pactivePlayer = pactivePlayer === 0 ? 1 : 0;
+  pplayer0El.classList.toggle("pplayer--active");
+  pplayer1El.classList.toggle("pplayer--active");
+};
+
+//rolling dice func
+pbtnRoll.addEventListener("click", function () {
+  if (pplaying) {
+    const dice = Math.trunc(Math.random() * 6) + 1;
+    pdiceEl.classList.remove("phidden");
+    pdiceEl.src = `dice-${dice}.png`;
+    if (dice !== 1) {
+      pcurrentScore += dice;
+      document.getElementById(`current--${pactivePlayer}`).textContent =
+        pcurrentScore;
+    } else {
+      switchPlayer();
+    }
+  }
+});
+
+pbtnHold.addEventListener("click", function () {
+  if (pplaying) {
+    pscores[pactivePlayer] += pcurrentScore;
+    document.getElementById(`pscore--${pactivePlayer}`).textContent =
+      pscores[pactivePlayer];
+
+    if (pscores[pactivePlayer] >= 100) {
+      pplaying = false;
+      document
+        .querySelector(`.pplayer--${pactivePlayer}`)
+        .classList.add("pplayer--winner");
+      document
+        .querySelector(`.pplayer--${pactivePlayer}`)
+        .classList.remove("pplayer--active");
+      pdiceEl.classList.add("phidden");
+    }
+
+    switchPlayer();
+  }
+});
+
+pbtnNew.addEventListener("click", init);

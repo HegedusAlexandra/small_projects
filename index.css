@@ -473,6 +473,7 @@ h4 {
   color: springgreen;
   border-radius: 10rem;
   cursor: pointer;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4), 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
