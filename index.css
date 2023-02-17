@@ -367,6 +367,7 @@ h1 {
 .show-modal {
   position: absolute;
   right: 0px;
+  width: 24%;
   transform: translate(0%, 140%);
   font-size: 2rem;
   font-weight: 600;
@@ -435,7 +436,7 @@ p {
 .draggable {
   width: 15%;
   height: 10%;
-
+  z-index: 4;
   margin-left: 1%;
   border-radius: 4px;
   padding: 0.5%;
@@ -516,19 +517,14 @@ h4 {
   height: 80vh;
   color: #333;
   background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#pigGameHead {
-  position: absolute;
-  transform: translate(-104%, -320%);
 }
 
 /* LAYOUT */
 #p {
   position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 70%;
   height: 60vh;
   background-color: rgba(255, 255, 255, 0.35);

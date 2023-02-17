@@ -168,7 +168,7 @@ const statement = [
 
 function addModal(arr) {
   let tag = document.createElement("button");
-  let text = document.createTextNode("Click for statements");
+  let text = document.createTextNode("Click for the riddle");
   let input = document.createElement("input");
   let textSend = document.createTextNode("Check!");
   let send = document.createElement("button");
@@ -300,7 +300,7 @@ interact(".draggable").draggable({
   inertia: true,
   // keep the element within the area of it's parent
   restrict: {
-    restriction: "parent",
+    /* restriction: "parent", */
     endOnly: true,
     elementRect: { top: 0, left: 0, bottom: 1, right: 1 },
   },
@@ -338,6 +338,24 @@ function dragMoveListener(event) {
   // update the posiion attributes
   target.setAttribute("data-x", x);
   target.setAttribute("data-y", y);
+
+  let rectp = target.getBoundingClientRect();
+  let i = document.querySelector(".solvedRiddle");
+  let recti = i.getBoundingClientRect();
+
+  if (
+    rectp.top >= recti.top &&
+    rectp.bottom <= recti.bottom &&
+    rectp.right <= recti.right &&
+    rectp.left >= recti.left
+  ) {
+    console.log("winner");
+    i.value = target.textContent;
+  } else {
+    console.log("looser");
+  }
+  /* console.log(rectp.top, rectp.right, rectp.bottom, rectp.left); */
+  /* console.log(recti.top, recti.right, recti.bottom, recti.left); */
 }
 
 // this is used later in the resizing and gesture demos
