@@ -5,6 +5,7 @@
 //GMN2
 //EINSTEIN
 //Pig Game
+//Yahtzee
 
 //GMN1
 
@@ -171,6 +172,7 @@ function addModal(arr) {
   let text = document.createTextNode("Click for the riddle");
   let input = document.createElement("input");
   let textSend = document.createTextNode("Check!");
+
   let send = document.createElement("button");
   let question = document.createElement("h4");
   let textQuestion = document.createTextNode("Who owns the fish?");
@@ -185,8 +187,8 @@ function addModal(arr) {
 
   let element = document.getElementById("einstein");
 
-  element.appendChild(question);
   element.appendChild(tag);
+  element.appendChild(question);
   element.appendChild(input);
   element.appendChild(send);
 
@@ -202,10 +204,10 @@ function addModal(arr) {
 addModal(statement);
 
 const dragIt = [
-  "German",
   "Norwegian",
   "Swede",
   "Dane",
+  "German",
   "British",
   "dogs ",
   "cats",
@@ -442,3 +444,27 @@ pbtnHold.addEventListener("click", function () {
 });
 
 pbtnNew.addEventListener("click", init);
+
+// Yahtzee
+
+const y_table = [
+  { name: "aces", count: "nod*1" },
+  { name: "twos", count: "nod*2" },
+  { name: "threes", count: "nod*3" },
+  { name: "fours", count: "nod*4" },
+  { name: "fives", count: "nod*5" },
+  { name: "sixes", count: "nod*6" },
+  { name: "3 of a kind", count: "sum" },
+  { name: "4 of a kind", count: "sum" },
+  //three of one number two of another
+  { name: "full house", count: 25 },
+  //four sequential dice
+  { name: "Low Straight", count: 30 },
+  //five sequential dice
+  { name: "High Straight", count: 40 },
+  //five of a kind
+  { name: "YAHTZEE", count: 50 },
+  //any combination
+  { name: "CHANCE", count: "sum" },
+  { name: "YAHTZEE BONUS", count: 100 },
+];

@@ -2,7 +2,8 @@
 GMN
 FMN
 EINSTEIN 
-Pig Game*/
+Pig Game
+YAHTZEE*/
 
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer:ital@0;1&display=swap");
@@ -368,7 +369,7 @@ h1 {
   position: absolute;
   right: 0px;
   width: 24%;
-  transform: translate(0%, 140%);
+  transform: translate(0%, 0%);
   font-size: 2rem;
   font-weight: 600;
   padding: 1rem 1.5rem;
@@ -466,6 +467,7 @@ h4 {
   right: 0px;
   width: 24%;
 
+  transform: translate(4%, 140%);
   font-size: 2rem;
   font-weight: 600;
   padding: 1rem 1.5rem;
@@ -669,4 +671,52 @@ h4 {
 
 .phidden {
   display: none;
+}
+
+/* YAHTZEE */
+
+#yahtzee {
+  display: flex;
+  flex-direction: row;
+  background-image: url("./canyon.jpg");
+  background-attachment: fixed;
+}
+
+.y--scoretable {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+
+  width: 50%;
+  height: 70vh;
+  border-radius: 4px;
+  top: 5vh;
+  left: 10%;
+}
+
+.y--playground {
+  position: relative;
+  background-color: #ffbf8a4d;
+  backdrop-filter: blur(4px);
+  width: 30%;
+  height: 70vh;
+  border-radius: 4px;
+  top: 5vh;
+  right: -14%;
+}
+
+th {
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  color: rgb(255, 255, 255);
+  border-radius: 20px 10px 20px 10px;
+}
+
+td {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border-radius: 20px 10px 20px 10px;
+  width: 160px;
+  height: 4vh;
 }
