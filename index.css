@@ -696,6 +696,10 @@ h4 {
 }
 
 .y--playground {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: center;
   position: relative;
   background-color: #ffbf8a4d;
   backdrop-filter: blur(4px);
@@ -707,16 +711,126 @@ h4 {
 }
 
 th {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(4px);
   color: rgb(255, 255, 255);
-  border-radius: 20px 10px 20px 10px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  padding-right: 1vh;
+  padding-left: 1vh;
+  font-family: "Nunito", sans-serif;
 }
 
 td {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(4px);
-  border-radius: 20px 10px 20px 10px;
+  border-radius: 2px;
   width: 160px;
   height: 4vh;
+  color: #000000;
+  text-transform: uppercase;
+  padding-right: 1vh;
+  padding-left: 1vh;
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+}
+
+.dicecontainer,
+.buttoncontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 40%;
+}
+
+.y--dice {
+  height: 12vh;
+  width: 12vh;
+  margin: 1vh;
+  box-shadow: 1px 1px 2px #000000, -1px -1px 2px rgba(255, 255, 255, 0.685);
+}
+
+.y--btn {
+  height: 10vh;
+  width: 24vh;
+  margin: 3vh;
+
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 6vh;
+  background: #c39969;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px #000000, -1px -1px 2px rgba(255, 255, 255, 0.685);
+}
+
+.y--btn:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #ffffff,
+    #747474,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #ffffff,
+    #585858,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 4px;
+}
+
+.y--btn:active {
+  color: #000000;
+}
+
+.y--btn:active:after {
+  background: transparent;
+}
+
+.y--btn:hover:before {
+  opacity: 1;
+}
+
+.y--btn:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #c39969;
+  border-radius: 4px;
+  left: 0;
+  top: 0;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
