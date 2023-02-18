@@ -454,8 +454,8 @@ const y_table = [
   { name: "fours", count: "nod*4" },
   { name: "fives", count: "nod*5" },
   { name: "sixes", count: "nod*6" },
-  { name: "3 of a kind", count: "sum" },
-  { name: "4 of a kind", count: "sum" },
+  { name: "3 of a kind", count: "sum of dice" },
+  { name: "4 of a kind", count: "sum of dice" },
   //three of one number two of another
   { name: "full house", count: 25 },
   //four sequential dice
@@ -465,6 +465,49 @@ const y_table = [
   //five of a kind
   { name: "YAHTZEE", count: 50 },
   //any combination
-  { name: "CHANCE", count: "sum" },
+  { name: "CHANCE", count: "sum of dice" },
   { name: "YAHTZEE BONUS", count: 100 },
 ];
+
+const tbody = document.querySelector("tbody");
+
+function table(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    const rowtable = document.createElement("tr");
+    const headtable = document.createElement("th");
+    const datatablename = document.createElement("td");
+    const datatableplayer0 = document.createElement("td");
+    const datatableplayer1 = document.createElement("td");
+
+    headtable.textContent = arr[i].name;
+    datatablename.textContent = arr[i].count;
+    datatableplayer0.classList.add(`player0--${i}`);
+    datatableplayer1.classList.add(`player1--${i}`);
+
+    rowtable.appendChild(headtable);
+    rowtable.appendChild(datatablename);
+    rowtable.appendChild(datatableplayer0);
+    rowtable.appendChild(datatableplayer1);
+
+    tbody.appendChild(rowtable);
+  }
+
+  const rowtableGT = document.createElement("tr");
+  const headtableGT = document.createElement("th");
+  const datatablenameGT = document.createElement("th");
+  const datatableplayer0GT = document.createElement("th");
+  const datatableplayer1GT = document.createElement("th");
+
+  datatablenameGT.textContent = "grand total";
+  datatableplayer0GT.textContent = 0;
+  datatableplayer1GT.textContent = 0;
+
+  rowtableGT.appendChild(headtableGT);
+  rowtableGT.appendChild(datatablenameGT);
+  rowtableGT.appendChild(datatableplayer0GT);
+  rowtableGT.appendChild(datatableplayer1GT);
+
+  tbody.appendChild(rowtableGT);
+}
+
+table(y_table);
