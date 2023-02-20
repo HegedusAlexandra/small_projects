@@ -5,7 +5,6 @@
 //GMN2
 //EINSTEIN
 //Pig Game
-//Yahtzee
 
 //GMN1
 
@@ -444,100 +443,3 @@ pbtnHold.addEventListener("click", function () {
 });
 
 pbtnNew.addEventListener("click", init);
-
-// Yahtzee
-
-// generate table
-
-const y_table = [
-  { name: "aces", count: "nod*1" },
-  { name: "twos", count: "nod*2" },
-  { name: "threes", count: "nod*3" },
-  { name: "fours", count: "nod*4" },
-  { name: "fives", count: "nod*5" },
-  { name: "sixes", count: "nod*6" },
-  { name: "3 of a kind", count: "sum of dice" },
-  { name: "4 of a kind", count: "sum of dice" },
-  //three of one number two of another
-  { name: "full house", count: 25 },
-  //four sequential dice
-  { name: "Low Straight", count: 30 },
-  //five sequential dice
-  { name: "High Straight", count: 40 },
-  //five of a kind
-  { name: "YAHTZEE", count: 50 },
-  //any combination
-  { name: "CHANCE", count: "sum of dice" },
-  { name: "YAHTZEE BONUS", count: 100 },
-];
-
-const tbody = document.querySelector("tbody");
-const ybtnRoll = document.querySelector(".y--roll");
-const ydiceEls = document.querySelectorAll(".y--dice");
-const yPlayer0Roll = document.querySelector(".y--player--0--roll");
-const yPlayer1Roll = document.querySelector(".y--player--1--roll");
-
-function table(arr) {
-  const rowtableRR = document.createElement("tr");
-  const datatablenameRR = document.createElement("th");
-  const datatableplayer0RR = document.createElement("th");
-  const datatableplayer1RR = document.createElement("th");
-
-  datatablenameRR.textContent = "remaining rolls";
-  datatablenameRR.colSpan = "2";
-  datatableplayer0RR.textContent = 3;
-  datatableplayer1RR.textContent = 3;
-  datatableplayer0RR.classList.add("y--player--0--roll");
-  datatableplayer1RR.classList.add("y--player--1--roll");
-
-  rowtableRR.appendChild(datatablenameRR);
-  rowtableRR.appendChild(datatableplayer0RR);
-  rowtableRR.appendChild(datatableplayer1RR);
-
-  tbody.appendChild(rowtableRR);
-
-  for (let i = 0; i < arr.length; i++) {
-    const rowtable = document.createElement("tr");
-    const headtable = document.createElement("th");
-    const datatablename = document.createElement("td");
-    const datatableplayer0 = document.createElement("td");
-    const datatableplayer1 = document.createElement("td");
-
-    headtable.textContent = arr[i].name;
-    datatablename.textContent = arr[i].count;
-    datatableplayer0.classList.add(`player0--${i}`);
-    datatableplayer1.classList.add(`player1--${i}`);
-
-    rowtable.appendChild(headtable);
-    rowtable.appendChild(datatablename);
-    rowtable.appendChild(datatableplayer0);
-    rowtable.appendChild(datatableplayer1);
-
-    tbody.appendChild(rowtable);
-  }
-
-  const rowtableGT = document.createElement("tr");
-  const datatablenameGT = document.createElement("th");
-  const datatableplayer0GT = document.createElement("th");
-  const datatableplayer1GT = document.createElement("th");
-
-  datatablenameGT.textContent = "grand total";
-  datatablenameGT.colSpan = "2";
-  datatableplayer0GT.textContent = 0;
-  datatableplayer1GT.textContent = 0;
-
-  rowtableGT.appendChild(datatablenameGT);
-  rowtableGT.appendChild(datatableplayer0GT);
-  rowtableGT.appendChild(datatableplayer1GT);
-
-  tbody.appendChild(rowtableGT);
-}
-
-table(y_table);
-
-ybtnRoll.addEventListener("click", function () {
-  for (let i = 0; i < ydiceEls.length; i++) {
-    const dice = Math.trunc(Math.random() * 6) + 1;
-    ydiceEls[i].src = `dice-${dice}.png`;
-  }
-});
