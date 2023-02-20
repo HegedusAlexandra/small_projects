@@ -1,1 +1,1 @@
-# small_projects
+# https://hegedusalexandra.github.io/small_projects/
